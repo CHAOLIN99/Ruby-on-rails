@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> <%=
+    javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="py-2 bg-body-tertiary border-bottom">
+      <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+          <%= nav_link 'Home', root_path %> <%= nav_link 'About', about_path %> <%= nav_link 'Books', books_path %>
+        </ul>
+        <ul class="nav">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <div id="liveAlertPlaceholder"></div>
+            <button type="button" class="btn btn-primary" id="liveAlertBtn">
+              Login
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: 0.75rem;
+              "
+            >
+              Sign up
+            </button>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <header class="py-3 mb-4 border-bottom">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">Mindfulness</span>
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+      </div>
+    </header>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Fleming & Kocovski’s Treatment Plan #1
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the first mindfulness activity.</strong> One such
+            group mindfulness-based treatment program by Fleming & Kocovski
+            (2007) aimed to reduce social anxiety. It is a good example of how
+            mindfulness exercises can be incorporated into a group setting for
+            its various benefits. In this example, the exercises used have
+            proven effective for treating social anxiety disorder in particular;
+            however, they can be applied to many other group settings with
+            positive results. The treatment plan involves groups of about 8
+            members meeting for 2 hours, every week for 12 weeks. The first
+            portion of each session is devoted to a short mindfulness exercise
+            and discussion.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            The Raisin Exercise#2
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second mindfulness activity.</strong> This is a
+            great introductory exercise for beginners to start practicing
+            mindfulness since it can be attempted by anyone with any kind of
+            food (although one with an interesting or unusual texture, smell, or
+            taste is best). In this exercise, the facilitator provides
+            participants with a few raisins and asks that they pretend they have
+            never seen a raisin before.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            The Body Scan#3
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third mindfulness activity.</strong> Another
+            popular exercise for practitioners of mindfulness is called the Body
+            Scan. It requires very little in the way of props or tools, and it
+            is also easily accessible for most beginners. Would you like to
+            follow a Body Scan right now? Try this 30 minute guided narrative
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      Read More About Us
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Modal title
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <% if @show_title %>
+      <div class="col">
+        <h1><%= yield(:title) %></h1>
+      </div>
+    </div>
+    <% end %>
+
+    <footer>
+      <div class="container">
+        <p class="text-center text-muted">
+          &copy; <%= Time.current.year %> Counsel
+        </p>
+      </div>
+    </footer>
+
+    <%= yield %>
+  </body>
+</html>

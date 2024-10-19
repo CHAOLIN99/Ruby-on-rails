@@ -1,0 +1,205 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+@import "rails_bootstrap_forms.css";
+@import "application.bootstrap";
+
+
+// Custom variables
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$primary-color: #000000;
+$secondary-color: #1d1d1f;
+$background-color: #ffffff;
+$accent-color: #0071e3;
+$text-color: #1d1d1f;
+$light-gray: #f5f5f7;
+
+// Override Bootstrap variables
+$font-family-base: $font-stack;
+$body-color: $text-color;
+$body-bg: $background-color;
+$primary: $accent-color;
+$border-radius: 0.8rem;
+$border-radius-lg: 1rem;
+$border-radius-sm: 0.5rem;
+
+// Typography
+body {
+  letter-spacing: -0.022em;
+  background-color:antiquewhite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.08349;
+  letter-spacing: -0.003em;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0em;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.47059;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Custom styles
+
+// Navigation
+.navbar {
+  background-color: rgba($background-color, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+
+  .navbar-brand, .nav-link {
+    color: $secondary-color;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+.about {
+  text-align: center;
+  padding: 80px 0;
+  background-color: $light-gray;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+}
+
+// Card
+.card {
+  border: none;
+  background-color: $light-gray;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .card-img-top {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+}
+
+// Footer
+footer {
+  background-color: $light-gray;
+  padding: 40px 0;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+
+  .footer-links {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .legal {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 20px;
+    color: #86868b;
+  }
+}
+
+// Media queries
+@include media-breakpoint-down(md) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+}
+
+// Main container to center the form
+.container {
+  display: flex;
+  justify-content: center;  // centers horizontally
+  align-items: center;      // centers vertically
+  min-height: 100vh;        // full height of the viewport
+  background-color: #f4f4f4; // optional background color
+}
+
+// Form styling
+.f {
+  width: 100%;
+  max-width: 400px;        // limit form width for responsiveness
+  padding: 2rem;
+  background-color: #fff;  // form background
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // optional shadow
+  display: flex;
+  flex-direction: column;  // stack form elements vertically
+
+  // Input field styles
+  input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  // Submit button style
+  button {
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
