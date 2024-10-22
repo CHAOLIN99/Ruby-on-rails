@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  integer: MyString
+  specialization: MyString
+  created_at: 2024-10-21 14:17:44
+  updated_at: 2024-10-21 14:17:44
+
+two:
+  id: MyString
+  integer: MyString
+  specialization: MyString
+  created_at: 2024-10-21 14:17:44
+  updated_at: 2024-10-21 14:17:44
