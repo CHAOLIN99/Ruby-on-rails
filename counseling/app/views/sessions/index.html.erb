@@ -1,0 +1,5 @@
+<% title"Session by" + @counselor.first_name %>
+    <%= render @counselor.sessions %>
+        <%= link_to "New Session" , new_counselor_session_path(@counselor), class: "btn btn-primary" %>
+            <br>
+            <%= link_to "Back to Counselors" , counselors_path(@counselor), class: "btn btn-primary" %>

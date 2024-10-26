@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  session_date: 2024-10-25 14:47:36
+  session_note: MyText
+  counselor_id: 1
+
+two:
+  title: MyString
+  session_date: 2024-10-25 14:47:36
+  session_note: MyText
+  counselor_id: 1

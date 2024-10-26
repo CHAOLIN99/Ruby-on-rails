@@ -1,0 +1,8 @@
+<div class="container">
+    <%= bootstrap_form_with(model: [@counselor, @session]) do |f| %>
+        <%= f.text_field :title, label: "Title" %>
+            <%= f.date_field :session_date, label: "Date" %>
+                <%= f.text_area :session_note, label: "Notes" %>
+                    <%= f.primary @session.persisted?? "Update Session" : "Create Session" %>
+                        <% end %>
+</div>

@@ -1,0 +1,8 @@
+<% title"Show Session"%>
+    <%= render @session %>
+        <div class="container">
+            <%= link_to "Edit" , edit_counselor_session_path(@counselor, @session), class: "btn btn-primary" %> |
+             <%= link_to "All Notes" , counselor_sessions_path(@counselor), class: "btn btn-primary" %>
+             <br>
+                <%= button_to "Delete" ,[@counselor,@session],method: :delete, class: "btn btn-danger", form:{data: { turbo_confirm: "Are you sure?" } } %>
+            </div>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  visit_date: 2024-10-25 14:50:03
+  visit_note: MyText
+  counselor_id: 1
+
+two:
+  title: MyString
+  visit_date: 2024-10-25 14:50:03
+  visit_note: MyText
+  counselor_id: 1

@@ -1,0 +1,13 @@
+<div class="container" id="<%= dom_id(session)%>">
+    <div class="f">
+        <p><strong>Title</strong>
+            <%= link_to_unless_current session.title, counselor_session_path(@counselor,session) %>
+        </p>
+        <p><strong>Date</strong>
+            <%= session.session_date %>
+        </p>
+        <p><strong>Notes</strong>
+            <%= session.session_note %>
+        </p>
+    </div>
+</div>
