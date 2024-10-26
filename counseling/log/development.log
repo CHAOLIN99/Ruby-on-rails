@@ -10025,3 +10025,1349 @@ Processing by SessionsController#index as TURBO_STREAM
 Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 1.7ms)
 
 
+Started GET "/counselors" for ::1 at 2024-10-25 16:33:58 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.5ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-10-25 16:34:02 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 3.8ms | GC: 0.4ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 1.6ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started POST "/counselors" for ::1 at 2024-10-25 16:35:09 -1000
+Processing by CounselorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "counselor"=>{"first_name"=>"Mike ", "last_name"=>"Perterson", "specialization"=>"Child and adolescent psychiatry", "email"=>"[FILTERED]", "phone"=>"(808)-904-8888"}, "commit"=>"Create Counselor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+  [1m[36mCounselor Create (1.4ms)[0m  [1m[32mINSERT INTO "counselors" ("first_name", "last_name", "specialization", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Mike "], ["last_name", "Perterson"], ["specialization", "Child and adolescent psychiatry"], ["email", "[FILTERED]"], ["phone", "(808)-904-8888"], ["created_at", "2024-10-26 02:35:09.900401"], ["updated_at", "2024-10-26 02:35:09.900401"]]
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+Redirected to http://localhost:3000/counselors
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:35:09 -1000
+Processing by CounselorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:36:01 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.6ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 2.2ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-25 16:36:02 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/counselors/2" for ::1 at 2024-10-25 16:36:03 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 1.0ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/counselors/1" for ::1 at 2024-10-25 16:39:05 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+  </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <%= yield :head %>
+
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+          <%= javascript_importmap_tags %>
+</head>
+
+<body>
+  <nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <%= nav_link 'Home' , root_path %>
+          <%= nav_link 'About' , about_path %>
+            <%= nav_link 'Books' , books_path %>
+              <%= nav_link 'Counselors' , counselors_path %>
+      </ul>
+      <ul class="nav">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <div id="liveAlertPlaceholder"></div>
+          <button type="button" class="btn btn-primary" id="liveAlertBtn">
+            Login
+          </button>
+
+          <button type="button" class="btn btn-primary" style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: 0.75rem;
+              ">
+            Sign up
+          </button>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-4">Mindfulness</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+      </form>
+    </div>
+  </header>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          Fleming & Kocovski’s Treatment Plan #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the first mindfulness activity.</strong> One such
+          group mindfulness-based treatment program by Fleming & Kocovski
+          (2007) aimed to reduce social anxiety. It is a good example of how
+          mindfulness exercises can be incorporated into a group setting for
+          its various benefits. In this example, the exercises used have
+          proven effective for treating social anxiety disorder in particular;
+          however, they can be applied to many other group settings with
+          positive results. The treatment plan involves groups of about 8
+          members meeting for 2 hours, every week for 12 weeks. The first
+          portion of each session is devoted to a short mindfulness exercise
+          and discussion.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          The Raisin Exercise#2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the second mindfulness activity.</strong> This is a
+          great introductory exercise for beginners to start practicing
+          mindfulness since it can be attempted by anyone with any kind of
+          food (although one with an interesting or unusual texture, smell, or
+          taste is best). In this exercise, the facilitator provides
+          participants with a few raisins and asks that they pretend they have
+          never seen a raisin before.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          The Body Scan#3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the third mindfulness activity.</strong> Another
+          popular exercise for practitioners of mindfulness is called the Body
+          Scan. It requires very little in the way of props or tools, and it
+          is also easily accessible for most beginners. Would you like to
+          follow a Body Scan right now? Try this 30 minute guided narrative
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Read More About Us
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Modal title
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">...</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @show_title %>
+      <div class="col">
+        <h1>
+          <%= yield(:title) %>
+        </h1>
+      </div>
+  </div>
+  <% end %>
+
+
+
+    <%= yield %>
+</body>
+
+<footer>
+  <div class="container">
+    <p class="text-center text-muted">
+      &copy; <%= Time.current.year %> Counsel
+    </p>
+  </div>
+</footer>
+
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/weicheng/Developer/final-project-CHAOLIN99/counseling/app/views/layouts/application.html.erb:18: syntax error, unexpected ':', expecting ')'
+...ication" , "data-turbo-track" : "reload" ); @output_buffer.s...
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    
+4:    <head>
+5:      <title>
+6:        Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+7:      </title>
+8:      <meta name="viewport" content="width=device-width,initial-scale=1" />
+9:      <meta name="apple-mobile-web-app-capable" content="yes" />
+10:      <%= csrf_meta_tags %>
+11:        <%= csp_meta_tag %>
+12:          <%= yield :head %>
+13:    
+14:            <link rel="manifest" href="/manifest.json" />
+15:            <link rel="icon" href="/icon.png" type="image/png" />
+16:            <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+17:            <link rel="apple-touch-icon" href="/icon.png" />
+18:            <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+19:              <%= javascript_importmap_tags %>
+20:    </head>
+21:    
+22:    <body>
+23:      <nav class="py-2 bg-body-tertiary border-bottom">
+24:        <div class="container d-flex flex-wrap">
+25:          <ul class="nav me-auto">
+26:            <%= nav_link 'Home' , root_path %>
+27:              <%= nav_link 'About' , about_path %>
+28:                <%= nav_link 'Books' , books_path %>
+29:                  <%= nav_link 'Counselors' , counselors_path %>
+30:          </ul>
+31:          <ul class="nav">
+32:            <div class="btn-group" role="group" aria-label="Basic example">
+33:              <div id="liveAlertPlaceholder"></div>
+34:              <button type="button" class="btn btn-primary" id="liveAlertBtn">
+35:                Login
+36:              </button>
+37:    
+38:              <button type="button" class="btn btn-primary" style="
+39:                    --bs-btn-padding-y: 0.25rem;
+40:                    --bs-btn-padding-x: 0.5rem;
+41:                    --bs-btn-font-size: 0.75rem;
+42:                  ">
+43:                Sign up
+44:              </button>
+45:            </div>
+46:          </ul>
+47:        </div>
+48:      </nav>
+49:      <header class="py-3 mb-4 border-bottom">
+50:        <div class="container d-flex flex-wrap justify-content-center">
+51:          <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+52:            <svg class="bi me-2" width="40" height="32">
+53:              <use xlink:href="#bootstrap" />
+54:            </svg>
+55:            <span class="fs-4">Mindfulness</span>
+56:          </a>
+57:          <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+58:            <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+59:          </form>
+60:        </div>
+61:      </header>
+62:    
+63:      <div class="accordion" id="accordionExample">
+64:        <div class="accordion-item">
+65:          <h2 class="accordion-header">
+66:            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+67:              aria-expanded="true" aria-controls="collapseOne">
+68:              Fleming & Kocovski’s Treatment Plan #1
+69:            </button>
+70:          </h2>
+71:          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+72:            <div class="accordion-body">
+73:              <strong>This is the first mindfulness activity.</strong> One such
+74:              group mindfulness-based treatment program by Fleming & Kocovski
+75:              (2007) aimed to reduce social anxiety. It is a good example of how
+76:              mindfulness exercises can be incorporated into a group setting for
+77:              its various benefits. In this example, the exercises used have
+78:              proven effective for treating social anxiety disorder in particular;
+79:              however, they can be applied to many other group settings with
+80:              positive results. The treatment plan involves groups of about 8
+81:              members meeting for 2 hours, every week for 12 weeks. The first
+82:              portion of each session is devoted to a short mindfulness exercise
+83:              and discussion.
+84:            </div>
+85:          </div>
+86:        </div>
+87:        <div class="accordion-item">
+88:          <h2 class="accordion-header">
+89:            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+90:              aria-expanded="false" aria-controls="collapseTwo">
+91:              The Raisin Exercise#2
+92:            </button>
+93:          </h2>
+94:          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+95:            <div class="accordion-body">
+96:              <strong>This is the second mindfulness activity.</strong> This is a
+97:              great introductory exercise for beginners to start practicing
+98:              mindfulness since it can be attempted by anyone with any kind of
+99:              food (although one with an interesting or unusual texture, smell, or
+100:              taste is best). In this exercise, the facilitator provides
+101:              participants with a few raisins and asks that they pretend they have
+102:              never seen a raisin before.
+103:            </div>
+104:          </div>
+105:        </div>
+106:        <div class="accordion-item">
+107:          <h2 class="accordion-header">
+108:            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+109:              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+110:              The Body Scan#3
+111:            </button>
+112:          </h2>
+113:          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+114:            <div class="accordion-body">
+115:              <strong>This is the third mindfulness activity.</strong> Another
+116:              popular exercise for practitioners of mindfulness is called the Body
+117:              Scan. It requires very little in the way of props or tools, and it
+118:              is also easily accessible for most beginners. Would you like to
+119:              follow a Body Scan right now? Try this 30 minute guided narrative
+120:            </div>
+121:          </div>
+122:        </div>
+123:      </div>
+124:    
+125:      <!-- Button trigger modal -->
+126:      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+127:        Read More About Us
+128:      </button>
+129:    
+130:      <!-- Modal -->
+131:      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+132:        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+133:        <div class="modal-dialog">
+134:          <div class="modal-content">
+135:            <div class="modal-header">
+136:              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+137:                Modal title
+138:              </h1>
+139:              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+140:            </div>
+141:            <div class="modal-body">...</div>
+142:            <div class="modal-footer">
+143:              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+144:                Close
+145:              </button>
+146:              <button type="button" class="btn btn-primary">Understood</button>
+147:            </div>
+148:          </div>
+149:        </div>
+150:      </div>
+151:    
+152:      <div class="row">
+153:        <% if @show_title %>
+154:          <div class="col">
+155:            <h1>
+156:              <%= yield(:title) %>
+157:            </h1>
+158:          </div>
+159:      </div>
+160:      <% end %>
+161:    
+162:    
+163:    
+164:        <%= yield %>
+165:    </body>
+166:    
+167:    <footer>
+168:      <div class="container">
+169:        <p class="text-center text-muted">
+170:          &copy; <%= Time.current.year %> Counsel
+171:        </p>
+172:      </div>
+173:    </footer>
+174:    
+175:    </html>
+  
+app/views/layouts/application.html.erb:18: syntax error, unexpected ':', expecting ')'
+Started GET "/counselors/1" for ::1 at 2024-10-25 16:39:49 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+  </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <%= yield :head %>
+
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+          <%= javascript_importmap_tags %>
+</head>
+
+<body>
+  <nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <%= nav_link 'Home' , root_path %>
+          <%= nav_link 'About' , about_path %>
+            <%= nav_link 'Books' , books_path %>
+              <%= nav_link 'Counselors' , counselors_path %>
+      </ul>
+      <ul class="nav">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <div id="liveAlertPlaceholder"></div>
+          <button type="button" class="btn btn-primary" id="liveAlertBtn">
+            Login
+          </button>
+
+          <button type="button" class="btn btn-primary" style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: 0.75rem;
+              ">
+            Sign up
+          </button>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-4">Mindfulness</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+      </form>
+    </div>
+  </header>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          Fleming & Kocovski’s Treatment Plan #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the first mindfulness activity.</strong> One such
+          group mindfulness-based treatment program by Fleming & Kocovski
+          (2007) aimed to reduce social anxiety. It is a good example of how
+          mindfulness exercises can be incorporated into a group setting for
+          its various benefits. In this example, the exercises used have
+          proven effective for treating social anxiety disorder in particular;
+          however, they can be applied to many other group settings with
+          positive results. The treatment plan involves groups of about 8
+          members meeting for 2 hours, every week for 12 weeks. The first
+          portion of each session is devoted to a short mindfulness exercise
+          and discussion.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          The Raisin Exercise#2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the second mindfulness activity.</strong> This is a
+          great introductory exercise for beginners to start practicing
+          mindfulness since it can be attempted by anyone with any kind of
+          food (although one with an interesting or unusual texture, smell, or
+          taste is best). In this exercise, the facilitator provides
+          participants with a few raisins and asks that they pretend they have
+          never seen a raisin before.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          The Body Scan#3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the third mindfulness activity.</strong> Another
+          popular exercise for practitioners of mindfulness is called the Body
+          Scan. It requires very little in the way of props or tools, and it
+          is also easily accessible for most beginners. Would you like to
+          follow a Body Scan right now? Try this 30 minute guided narrative
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Read More About Us
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Modal title
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">...</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @show_title %>
+      <div class="col">
+        <h1>
+          <%= yield(:title) %>
+        </h1>
+      </div>
+  </div>
+  <% end %>
+
+
+
+    <%= yield %>
+</body>
+
+<footer>
+  <div class="container">
+    <p class="text-center text-muted">
+      &copy; <%= Time.current.year %> Counsel
+    </p>
+  </div>
+</footer>
+
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/weicheng/Developer/final-project-CHAOLIN99/counseling/app/views/layouts/application.html.erb:18: syntax error, unexpected ':', expecting ')'
+...ication" , "data-turbo-track" : "reload" ); @output_buffer.s...
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    
+4:    <head>
+5:      <title>
+6:        Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+7:      </title>
+8:      <meta name="viewport" content="width=device-width,initial-scale=1" />
+9:      <meta name="apple-mobile-web-app-capable" content="yes" />
+10:      <%= csrf_meta_tags %>
+11:        <%= csp_meta_tag %>
+12:          <%= yield :head %>
+13:    
+14:            <link rel="manifest" href="/manifest.json" />
+15:            <link rel="icon" href="/icon.png" type="image/png" />
+16:            <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+17:            <link rel="apple-touch-icon" href="/icon.png" />
+18:            <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+19:              <%= javascript_importmap_tags %>
+20:    </head>
+21:    
+22:    <body>
+23:      <nav class="py-2 bg-body-tertiary border-bottom">
+24:        <div class="container d-flex flex-wrap">
+25:          <ul class="nav me-auto">
+26:            <%= nav_link 'Home' , root_path %>
+27:              <%= nav_link 'About' , about_path %>
+28:                <%= nav_link 'Books' , books_path %>
+29:                  <%= nav_link 'Counselors' , counselors_path %>
+30:          </ul>
+31:          <ul class="nav">
+32:            <div class="btn-group" role="group" aria-label="Basic example">
+33:              <div id="liveAlertPlaceholder"></div>
+34:              <button type="button" class="btn btn-primary" id="liveAlertBtn">
+35:                Login
+36:              </button>
+37:    
+38:              <button type="button" class="btn btn-primary" style="
+39:                    --bs-btn-padding-y: 0.25rem;
+40:                    --bs-btn-padding-x: 0.5rem;
+41:                    --bs-btn-font-size: 0.75rem;
+42:                  ">
+43:                Sign up
+44:              </button>
+45:            </div>
+46:          </ul>
+47:        </div>
+48:      </nav>
+49:      <header class="py-3 mb-4 border-bottom">
+50:        <div class="container d-flex flex-wrap justify-content-center">
+51:          <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+52:            <svg class="bi me-2" width="40" height="32">
+53:              <use xlink:href="#bootstrap" />
+54:            </svg>
+55:            <span class="fs-4">Mindfulness</span>
+56:          </a>
+57:          <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+58:            <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+59:          </form>
+60:        </div>
+61:      </header>
+62:    
+63:      <div class="accordion" id="accordionExample">
+64:        <div class="accordion-item">
+65:          <h2 class="accordion-header">
+66:            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+67:              aria-expanded="true" aria-controls="collapseOne">
+68:              Fleming & Kocovski’s Treatment Plan #1
+69:            </button>
+70:          </h2>
+71:          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+72:            <div class="accordion-body">
+73:              <strong>This is the first mindfulness activity.</strong> One such
+74:              group mindfulness-based treatment program by Fleming & Kocovski
+75:              (2007) aimed to reduce social anxiety. It is a good example of how
+76:              mindfulness exercises can be incorporated into a group setting for
+77:              its various benefits. In this example, the exercises used have
+78:              proven effective for treating social anxiety disorder in particular;
+79:              however, they can be applied to many other group settings with
+80:              positive results. The treatment plan involves groups of about 8
+81:              members meeting for 2 hours, every week for 12 weeks. The first
+82:              portion of each session is devoted to a short mindfulness exercise
+83:              and discussion.
+84:            </div>
+85:          </div>
+86:        </div>
+87:        <div class="accordion-item">
+88:          <h2 class="accordion-header">
+89:            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+90:              aria-expanded="false" aria-controls="collapseTwo">
+91:              The Raisin Exercise#2
+92:            </button>
+93:          </h2>
+94:          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+95:            <div class="accordion-body">
+96:              <strong>This is the second mindfulness activity.</strong> This is a
+97:              great introductory exercise for beginners to start practicing
+98:              mindfulness since it can be attempted by anyone with any kind of
+99:              food (although one with an interesting or unusual texture, smell, or
+100:              taste is best). In this exercise, the facilitator provides
+101:              participants with a few raisins and asks that they pretend they have
+102:              never seen a raisin before.
+103:            </div>
+104:          </div>
+105:        </div>
+106:        <div class="accordion-item">
+107:          <h2 class="accordion-header">
+108:            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+109:              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+110:              The Body Scan#3
+111:            </button>
+112:          </h2>
+113:          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+114:            <div class="accordion-body">
+115:              <strong>This is the third mindfulness activity.</strong> Another
+116:              popular exercise for practitioners of mindfulness is called the Body
+117:              Scan. It requires very little in the way of props or tools, and it
+118:              is also easily accessible for most beginners. Would you like to
+119:              follow a Body Scan right now? Try this 30 minute guided narrative
+120:            </div>
+121:          </div>
+122:        </div>
+123:      </div>
+124:    
+125:      <!-- Button trigger modal -->
+126:      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+127:        Read More About Us
+128:      </button>
+129:    
+130:      <!-- Modal -->
+131:      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+132:        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+133:        <div class="modal-dialog">
+134:          <div class="modal-content">
+135:            <div class="modal-header">
+136:              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+137:                Modal title
+138:              </h1>
+139:              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+140:            </div>
+141:            <div class="modal-body">...</div>
+142:            <div class="modal-footer">
+143:              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+144:                Close
+145:              </button>
+146:              <button type="button" class="btn btn-primary">Understood</button>
+147:            </div>
+148:          </div>
+149:        </div>
+150:      </div>
+151:    
+152:      <div class="row">
+153:        <% if @show_title %>
+154:          <div class="col">
+155:            <h1>
+156:              <%= yield(:title) %>
+157:            </h1>
+158:          </div>
+159:      </div>
+160:      <% end %>
+161:    
+162:    
+163:    
+164:        <%= yield %>
+165:    </body>
+166:    
+167:    <footer>
+168:      <div class="container">
+169:        <p class="text-center text-muted">
+170:          &copy; <%= Time.current.year %> Counsel
+171:        </p>
+172:      </div>
+173:    </footer>
+174:    
+175:    </html>
+  
+app/views/layouts/application.html.erb:18: syntax error, unexpected ':', expecting ')'
+Started GET "/counselors/1" for ::1 at 2024-10-25 16:41:48 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-25 16:41:48 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/counselors/1/sessions" for ::1 at 2024-10-25 16:41:50 -1000
+Processing by SessionsController#index as HTML
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 1]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [1 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions/new" for ::1 at 2024-10-25 16:41:51 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 4.0ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started POST "/counselors/1/sessions" for ::1 at 2024-10-25 16:42:29 -1000
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"title"=>"problem with sleeping ", "session_date"=>"2024-10-08", "session_note"=>"mike, peter, john"}, "commit"=>"Create Session", "counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+  [1m[36mSession Create (1.1ms)[0m  [1m[32mINSERT INTO "sessions" ("title", "session_date", "session_note", "counselor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "problem with sleeping "], ["session_date", "2024-10-08 00:00:00"], ["session_note", "mike, peter, john"], ["counselor_id", 1], ["created_at", "2024-10-26 02:42:29.755726"], ["updated_at", "2024-10-26 02:42:29.755726"]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/counselors/1/sessions.3
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/counselors/1/sessions.3" for ::1 at 2024-10-25 16:42:29 -1000
+Processing by SessionsController#index as */*
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 1]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.7ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/counselors/1/sessions/3" for ::1 at 2024-10-25 16:42:30 -1000
+Processing by SessionsController#show as HTML
+  Parameters: {"counselor_id"=>"1", "id"=>"3"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/show.html.erb within layouts/application
+  Rendered sessions/_session.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered sessions/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/counselors/1/sessions" for ::1 at 2024-10-25 16:42:32 -1000
+Processing by SessionsController#index as HTML
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 1]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [2 times] (Duration: 0.5ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions/3/edit" for ::1 at 2024-10-25 16:42:33 -1000
+Processing by SessionsController#edit as HTML
+  Parameters: {"counselor_id"=>"1", "id"=>"3"}
+  [1m[36mCounselor Load (0.4ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/edit.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered sessions/edit.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2024-10-25 16:42:35 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:42:35 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:42:46 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2024-10-25 16:42:48 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:43:00 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1" for ::1 at 2024-10-25 16:43:06 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions" for ::1 at 2024-10-25 16:43:12 -1000
+Processing by SessionsController#index as HTML
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 1]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [2 times] (Duration: 0.5ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions/2" for ::1 at 2024-10-25 16:43:18 -1000
+Processing by SessionsController#show as HTML
+  Parameters: {"counselor_id"=>"1", "id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/show.html.erb within layouts/application
+  Rendered sessions/_session.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sessions/show.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions/2/edit" for ::1 at 2024-10-25 16:43:20 -1000
+Processing by SessionsController#edit as HTML
+  Parameters: {"counselor_id"=>"1", "id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/edit.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered sessions/edit.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/counselors/1/sessions/2" for ::1 at 2024-10-25 16:43:25 -1000
+Processing by SessionsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"title"=>"Mike person", "session_date"=>"2024-10-09", "session_note"=>"eating issue"}, "commit"=>"Update Session", "counselor_id"=>"1", "id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:32:in `update'
+  [1m[36mSession Update (0.5ms)[0m  [1m[33mUPDATE "sessions" SET "title" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["title", "Mike person"], ["updated_at", "2024-10-26 02:43:25.922722"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:32:in `update'
+Redirected to http://localhost:3000/counselors/1/sessions/2
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/counselors/1/sessions/2" for ::1 at 2024-10-25 16:43:25 -1000
+Processing by SessionsController#show as TURBO_STREAM
+  Parameters: {"counselor_id"=>"1", "id"=>"2"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/show.html.erb within layouts/application
+  Rendered sessions/_session.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sessions/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.0ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started DELETE "/counselors/1/sessions/2" for ::1 at 2024-10-25 16:43:28 -1000
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "counselor_id"=>"1", "id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ? AND "sessions"."id" = ? LIMIT ?[0m  [["counselor_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:57:in `load_session'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:40:in `destroy'
+  [1m[36mSession Destroy (0.8ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:40:in `destroy'
+Redirected to http://localhost:3000/counselors/1/sessions
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1/sessions" for ::1 at 2024-10-25 16:43:28 -1000
+Processing by SessionsController#index as TURBO_STREAM
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 1]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [1 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/counselors.1" for ::1 at 2024-10-25 16:43:30 -1000
+Processing by CounselorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/counselors/1/sessions/new" for ::1 at 2024-10-25 16:43:30 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/counselors.1" for ::1 at 2024-10-25 16:43:30 -1000
+Processing by CounselorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/counselors/2" for ::1 at 2024-10-25 16:43:32 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.1ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/counselors/2/sessions" for ::1 at 2024-10-25 16:43:33 -1000
+Processing by SessionsController#index as HTML
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 2]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.1ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/counselors.2" for ::1 at 2024-10-25 16:43:35 -1000
+Processing by CounselorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.1ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/counselors/2/sessions/new" for ::1 at 2024-10-25 16:43:35 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 3.3ms | GC: 1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 1.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/counselors/2/sessions" for ::1 at 2024-10-25 16:43:52 -1000
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"title"=>"troble ", "session_date"=>"2024-10-15", "session_note"=>"asvsvdsv"}, "commit"=>"Create Session", "counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("title", "session_date", "session_note", "counselor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "troble "], ["session_date", "2024-10-15 00:00:00"], ["session_note", "asvsvdsv"], ["counselor_id", 2], ["created_at", "2024-10-26 02:43:52.203554"], ["updated_at", "2024-10-26 02:43:52.203554"]]
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:15:in `create'
+Redirected to http://localhost:3000/counselors/2/sessions.4
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/2/sessions.4" for ::1 at 2024-10-25 16:43:52 -1000
+Processing by SessionsController#index as */*
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/index.html.erb within layouts/application
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."counselor_id" = ?[0m  [["counselor_id", 2]]
+  ↳ app/views/sessions/index.html.erb:2
+  Rendered collection of sessions/_session.html.erb [1 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered sessions/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/2/sessions/new" for ::1 at 2024-10-25 16:43:54 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/2/sessions/new" for ::1 at 2024-10-25 16:43:55 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2024-10-25 16:44:03 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors.2" for ::1 at 2024-10-25 16:44:11 -1000
+Processing by CounselorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors.2" for ::1 at 2024-10-25 16:44:11 -1000
+Processing by CounselorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/2/sessions/new" for ::1 at 2024-10-25 16:44:12 -1000
+Processing by SessionsController#new as HTML
+  Parameters: {"counselor_id"=>"2"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:60:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.6ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:44:13 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.9ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/counselors" for ::1 at 2024-10-25 16:44:14 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/_counselor.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+

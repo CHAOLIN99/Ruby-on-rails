@@ -1,10 +1,8 @@
-<div class="container">
-    <%= title="Counselor" %>
-        <%= render @counselor %>
-            <div class="container">
-                <%= link_to "Edit" , edit_counselor_path(@counselor) %> | <%= link_to "All Counselors" , counselors_path
-                        %> | <%= link_to "Sessions" , counselor_sessions_path(@counselor) %>
+<%= title="Counselor" %>
+    <%= render @counselor %>
+        <div class="container">
+            <%= link_to "Edit" , edit_counselor_path(@counselor) %> | <%= link_to "All Counselors" , counselors_path %>
+                    | <%= link_to "Sessions" , counselor_sessions_path(@counselor) %>
                         <%= button_to "Delete" , @counselor, method: :delete, data: { turbo_confirm: "Are you sure?" },
                             class: "btn btn-danger" %>
-            </div>
-</div>
+        </div>
