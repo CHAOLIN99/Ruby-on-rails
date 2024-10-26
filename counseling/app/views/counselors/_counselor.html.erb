@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="f">
+        <p><strong>First Name:</strong>
+            <%= link_to_unless_current counselor.first_name, counselor %>
+        </p>
+        <p><strong>Last Name:</strong>
+            <%= counselor.last_name %>
+        </p>
+        <p><strong>Specialization:</strong>
+            <%= counselor.specialization %>
+        </p>
+        <p><strong>Email:</strong>
+            <%= counselor.email %>
+        </p>
+        <p><strong>Phone:</strong>
+            <%= counselor.phone %>
+        </p>
+    </div>
+</div>

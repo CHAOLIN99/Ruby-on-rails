@@ -1,0 +1,5 @@
+<% title "Counselors" %>
+    <% @counselors.each do |counselor| %>
+        <%= render counselor %>
+            <% end %>
+                <%= link_to "New Counselor" , new_counselor_path, class: "btn btn-primary" %>
