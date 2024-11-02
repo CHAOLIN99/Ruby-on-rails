@@ -1,92 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>
-    Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
-  </title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-      <%= yield :head %>
+  <meta charset="UTF-8">
+  <title>Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %></title>
 
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <%= stylesheet_link_tag "application" , "data-turbo-track"=> "reload" %>
-          <%= javascript_importmap_tags %>
+  <!-- Meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Counsel - Professional Mental Health Support Platform">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0071e3">
+
+  <!-- Security tags -->
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Custom head content -->
+  <%= yield :head %>
+
+  <!-- Favicon and manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <!-- Stylesheets and JavaScript -->
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 </head>
 
 <body>
-  <nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
-      <ul class="nav me-auto">
-        <%= nav_link 'Home' , root_path %>
-          <%= nav_link 'About' , about_path %>
-            <%= nav_link 'Books' , books_path %>
-              <%= nav_link 'Counselors' , counselors_path %>
-      </ul>
-      <ul class="nav">
-        <div class="btn-group" role="group" aria-label="Basic example">
+  <!-- Primary Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar__content">
+        <!-- Main Navigation -->
+        <ul class="navbar__links">
+          <%= nav_link 'Home', root_path, class: 'navbar__link' %>
+          <%= nav_link 'About', about_path, class: 'navbar__link' %>
+          <%= nav_link 'Books', books_path, class: 'navbar__link' %>
+          <%= nav_link 'Counselors', counselors_path, class: 'navbar__link' %>
+        </ul>
+
+        <!-- Authentication -->
+        <div class="navbar__auth">
           <div id="liveAlertPlaceholder"></div>
-          <button type="button" class="btn btn-primary" id="liveAlertBtn">
+          <button type="button" class="custom-form__button custom-form__button--small" id="liveAlertBtn">
             Login
           </button>
-
-          <button type="button" class="btn btn-primary"
-            style="--bs-btn-padding-y: 0.25rem; --bs-btn-padding-x: 0.5rem; --bs-btn-font-size: 0.75rem;">
+          <button type="button" class="custom-form__button custom-form__button--small custom-form__button--outline">
             Sign up
           </button>
         </div>
-      </ul>
+      </div>
     </div>
   </nav>
-  <header class="py-3 mb-4 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-center">
-      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32">
-          <use xlink:href="#bootstrap" />
-        </svg>
-        <span class="fs-4">Mindfulness</span>
-      </a>
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
-      </form>
+
+  <!-- Header with Search -->
+  <header class="header_image hero hero--small">
+    <div class="container">
+      <div class="header__content">
+        <a href="/" class="header__brand">
+          <svg class="header__logo" width="40" height="32" aria-hidden="true">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="header__title">Mindfulness</span>
+        </a>
+        <form class="header__search" role="search">
+          <div class="custom-form__group">
+            <input type="search" class="custom-form__input" placeholder="Search..." aria-label="Search" required>
+            <button type="submit" class="custom-form__button custom-form__button--icon">
+              <span class="visually-hidden">Search</span>
+              <svg width="16" height="16" fill="currentColor" aria-hidden="true">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </header>
 
-  <div class="accordion" id="accordionExample">
-    <!-- Accordion content here -->
-  </div>
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Read More About Us
-  </button>
-
-  <!-- Modal content here -->
-
-  <div class="row">
-    <% if @show_title %>
-      <div class="col">
-        <h1>
-          <%= yield(:title) %>
-        </h1>
-      </div>
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <% if @show_title %>
+        <div class="page-header">
+          <h1 class="page-header__title">
+            <%= yield(:title) %>
+          </h1>
+        </div>
       <% end %>
-  </div>
 
-  <%= yield %>
+      <!-- Accordion Section -->
+      <section class="accordion" id="accordionExample">
+        <!-- Accordion content here -->
+      </section>
+
+      <!-- Modal Trigger -->
+      <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Read More About Us
+      </button>
+
+      <%= yield %>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__links">
+          <div class="row">
+            <div class="col-md-3">
+              <h4 class="footer__heading">Quick Links</h4>
+              <ul class="footer__list">
+                <li><%= link_to 'Home', root_path, class: 'footer__link' %></li>
+                <li><%= link_to 'About', about_path, class: 'footer__link' %></li>
+                <li><%= link_to 'Books', books_path, class: 'footer__link' %></li>
+                <li><%= link_to 'Counselors', counselors_path, class: 'footer__link' %></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h4 class="footer__heading">Support</h4>
+              <ul class="footer__list">
+                <li><a href="#" class="footer__link">Contact Us</a></li>
+                <li><a href="#" class="footer__link">FAQs</a></li>
+                <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                <li><a href="#" class="footer__link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__legal">
+          <p>&copy; <%= Time.current.year %> Counsel. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">About Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Modal content here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="custom-form__button custom-form__button--outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-
-<footer>
-  <div class="container">
-    <p class="text-center text-muted">
-      &copy; <%= Time.current.year %> Counsel
-    </p>
-  </div>
-</footer>
 
 </html>
