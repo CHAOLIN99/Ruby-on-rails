@@ -1,205 +1,333 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
-@import "rails_bootstrap_forms.css";
-@import "application.bootstrap";
+// Modern Sass imports
+@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap-icons/font/bootstrap-icons';
+@use 'rails_bootstrap_forms';
 
+// CSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 // Custom variables
-$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-$primary-color: #000000;
-$secondary-color: #1d1d1f;
-$background-color: #ffffff;
-$accent-color: #0071e3;
-$text-color: #1d1d1f;
-$light-gray: #f5f5f7;
+:root {
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --primary-color: #000000;
+  --secondary-color: #1d1d1f;
+  --background-color: #ffffff;
+  --accent-color: #0071e3;
+  --text-color: #1d1d1f;
+  --light-gray: #f5f5f7;
+  --error-color: #ff3b30;
+  --success-color: #34c759;
+  --transition-speed: 0.3s;
+}
 
-// Override Bootstrap variables
-$font-family-base: $font-stack;
-$body-color: $text-color;
-$body-bg: $background-color;
-$primary: $accent-color;
+// Sass variables for Bootstrap overrides
+$font-family-base: var(--font-stack);
+$body-color: var(--text-color);
+$body-bg: var(--background-color);
+$primary: var(--accent-color);
 $border-radius: 0.8rem;
 $border-radius-lg: 1rem;
 $border-radius-sm: 0.5rem;
 
-// Typography
+// Base styles
 body {
+  font-family: var(--font-stack);
   letter-spacing: -0.022em;
-  background-color:antiquewhite;
+  line-height: 1.47059;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+// Typography
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.08349;
   letter-spacing: -0.003em;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   line-height: 1.1;
-  letter-spacing: 0em;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
 }
 
 p {
-  font-size: 17px;
+  font-size: 1.0625rem; // 17px
   line-height: 1.47059;
+  margin-bottom: 1rem;
 }
 
+// Links
 a {
-  color: $accent-color;
+  color: var(--accent-color);
   text-decoration: none;
+  transition: all var(--transition-speed) ease;
   
   &:hover {
     text-decoration: underline;
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 3px solid rgba(var(--accent-color), 0.5);
+    outline-offset: 2px;
   }
 }
 
-// Custom styles
-
 // Navigation
 .navbar {
-  background-color: rgba($background-color, 0.8);
-  backdrop-filter: saturate(180%) blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(var(--background-color), 0.8);
+  
+  @supports (backdrop-filter: blur(20px)) {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
 
-  .navbar-brand, .nav-link {
-    color: $secondary-color;
-    font-size: 14px;
+  .navbar-brand, 
+  .nav-link {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-speed) ease;
 
     &:hover {
       opacity: 1;
     }
+
+    &:focus {
+      outline: 3px solid rgba(var(--accent-color), 0.5);
+      outline-offset: 2px;
+    }
   }
 }
 
+// Hero section
+.hero {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: var(--light-gray);
 
+  &__title {
+    margin-bottom: 1.5rem;
+  }
 
+  &__subtitle {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+}
+
+// About section
 .about {
   text-align: center;
-  padding: 80px 0;
-  background-color: $light-gray;
+  padding: 5rem 0;
+  background-color: var(--light-gray);
 
-  h1 {
-    margin-bottom: 20px;
-  }
-
-  p {
+  &__content {
     max-width: 600px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
   }
 }
 
-// Card
+// Cards
 .card {
   border: none;
-  background-color: $light-gray;
-  transition: transform 0.3s ease;
+  background-color: var(--light-gray);
+  transition: transform var(--transition-speed) ease;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.03);
   }
 
-  .card-img-top {
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+  &__image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
   }
 
-  .card-body {
-    padding: 20px;
+  &__body {
+    padding: 1.25rem;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+  }
+
+  &__text {
+    color: var(--secondary-color);
   }
 }
 
-// Footer
-footer {
-  background-color: $light-gray;
-  padding: 40px 0;
-  font-size: 12px;
-  line-height: 1.33337;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+// Forms
+.custom-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  .footer-links {
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+  &__group {
+    margin-bottom: 1.5rem;
+  }
 
-      li {
-        margin-bottom: 10px;
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
 
-        a {
-          color: $secondary-color;
-        }
-      }
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.1);
+    }
+
+    &.is-invalid {
+      border-color: var(--error-color);
+    }
+
+    &.is-valid {
+      border-color: var(--success-color);
     }
   }
 
-  .legal {
-    border-top: 1px solid #d2d2d7;
-    padding-top: 20px;
-    color: #86868b;
-  }
-}
-
-// Media queries
-@include media-breakpoint-down(md) {
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 28px;
-  }
-
-  .hero {
-    padding: 60px 0;
-  }
-}
-
-// Main container to center the form
-.container {
-  display: flex;
-  justify-content: center;  // centers horizontally
-  align-items: center;      // centers vertically
-  min-height: 100vh;        // full height of the viewport
-  background-color: #f4f4f4; // optional background color
-}
-
-// Form styling
-.f {
-  width: 100%;
-  max-width: 400px;        // limit form width for responsiveness
-  padding: 2rem;
-  background-color: #fff;  // form background
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // optional shadow
-  display: flex;
-  flex-direction: column;  // stack form elements vertically
-
-  // Input field styles
-  input, textarea {
-    margin-bottom: 1rem;
+  &__button {
+    width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  // Submit button style
-  button {
-    padding: 0.75rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+
     &:hover {
-      background-color: #0056b3;
+      background-color: darken(var(--accent-color), 10%);
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: var(--light-gray);
+  padding: 2.5rem 0;
+  font-size: 0.75rem;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+
+  &__links {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.625rem;
+    }
+
+    a {
+      color: var(--secondary-color);
+    }
+  }
+
+  &__legal {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 1.25rem;
+    color: #86868b;
+  }
+}
+
+// Utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Media queries
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 3.75rem 0;
+  }
+
+  .about {
+    padding: 3.75rem 0;
+  }
+
+  .custom-form {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+}
+
+// Print styles
+@media print {
+  .navbar,
+  .footer {
+    display: none;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  a {
+    text-decoration: underline;
+    color: var(--text-color);
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
   }
 }
