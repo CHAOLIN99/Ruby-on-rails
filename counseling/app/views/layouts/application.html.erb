@@ -1,79 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %></title>
 
-  <!-- Meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Counsel - Professional Mental Health Support Platform">
-  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#0071e3">
 
-  <!-- Security tags -->
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <!-- Custom head content -->
   <%= yield :head %>
 
-  <!-- Favicon and manifest -->
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/icon.png" type="image/png">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="manifest" href="/manifest.json">
 
-  <!-- Stylesheets and JavaScript -->
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 </head>
 
 <body>
-  <!-- Primary Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <div class="navbar__content">
-        <!-- Main Navigation -->
-        <ul class="navbar__links">
-          <%= nav_link 'Home', root_path, class: 'navbar__link' %>
-          <%= nav_link 'About', about_path, class: 'navbar__link' %>
-          <%= nav_link 'Books', books_path, class: 'navbar__link' %>
-          <%= nav_link 'Counselors', counselors_path, class: 'navbar__link' %>
-        </ul>
+      <a href="/" class="navbar-brand">
+        <svg width="40" height="32" aria-hidden="true">
+          <use xlink:href="#bootstrap"/>
+        </svg>
+        Mindfulness
+      </a>
 
-        <!-- Authentication -->
-        <div class="navbar__auth">
-          <div id="liveAlertPlaceholder"></div>
-          <button type="button" class="custom-form__button custom-form__button--small" id="liveAlertBtn">
-            Login
-          </button>
-          <button type="button" class="custom-form__button custom-form__button--small custom-form__button--outline">
-            Sign up
-          </button>
-        </div>
+      <ul class="navbar__links">
+        <%= nav_link 'Home', root_path %>
+        <%= nav_link 'About', about_path %>
+        <%= nav_link 'Books', books_path %>
+        <%= nav_link 'Counselors', counselors_path %>
+      </ul>
+
+      <div class="navbar__auth">
+        <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Login
+        </button>
+        <button type="button" class="custom-form__button custom-form__button--outline">
+          Sign up
+        </button>
       </div>
     </div>
   </nav>
 
-  <!-- Header with Search -->
-  <header class="header_image hero hero--small">
+  <!-- Hero/Header -->
+  <header class="hero">
     <div class="container">
-      <div class="header__content">
-        <a href="/" class="header__brand">
-          <svg class="header__logo" width="40" height="32" aria-hidden="true">
-            <use xlink:href="#bootstrap" />
-          </svg>
-          <span class="header__title">Mindfulness</span>
-        </a>
-        <form class="header__search" role="search">
+      <div class="hero__content">
+        <form role="search" class="custom-form">
           <div class="custom-form__group">
-            <input type="search" class="custom-form__input" placeholder="Search..." aria-label="Search" required>
-            <button type="submit" class="custom-form__button custom-form__button--icon">
-              <span class="visually-hidden">Search</span>
-              <svg width="16" height="16" fill="currentColor" aria-hidden="true">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-              </svg>
+            <input type="search" 
+                   class="custom-form__input" 
+                   placeholder="Search..." 
+                   aria-label="Search"
+                   required>
+            <button type="submit" class="custom-form__button">
+              Search
             </button>
           </div>
         </form>
@@ -82,25 +71,11 @@
   </header>
 
   <!-- Main Content -->
-  <main class="main">
+  <main>
     <div class="container">
       <% if @show_title %>
-        <div class="page-header">
-          <h1 class="page-header__title">
-            <%= yield(:title) %>
-          </h1>
-        </div>
+        <h1><%= yield(:title) %></h1>
       <% end %>
-
-      <!-- Accordion Section -->
-      <section class="accordion" id="accordionExample">
-        <!-- Accordion content here -->
-      </section>
-
-      <!-- Modal Trigger -->
-      <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Read More About Us
-      </button>
 
       <%= yield %>
     </div>
@@ -109,53 +84,73 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__content">
-        <div class="footer__links">
-          <div class="row">
-            <div class="col-md-3">
-              <h4 class="footer__heading">Quick Links</h4>
-              <ul class="footer__list">
-                <li><%= link_to 'Home', root_path, class: 'footer__link' %></li>
-                <li><%= link_to 'About', about_path, class: 'footer__link' %></li>
-                <li><%= link_to 'Books', books_path, class: 'footer__link' %></li>
-                <li><%= link_to 'Counselors', counselors_path, class: 'footer__link' %></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h4 class="footer__heading">Support</h4>
-              <ul class="footer__list">
-                <li><a href="#" class="footer__link">Contact Us</a></li>
-                <li><a href="#" class="footer__link">FAQs</a></li>
-                <li><a href="#" class="footer__link">Privacy Policy</a></li>
-                <li><a href="#" class="footer__link">Terms of Service</a></li>
-              </ul>
-            </div>
+      <div class="footer__links">
+        <div class="row">
+          <div class="col-md-3">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'About', about_path %></li>
+              <li><%= link_to 'Books', books_path %></li>
+              <li><%= link_to 'Counselors', counselors_path %></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer__legal">
-          <p>&copy; <%= Time.current.year %> Counsel. All rights reserved.</p>
-        </div>
+      </div>
+      <div class="footer__legal">
+        <p>&copy; <%= Time.current.year %> Counsel. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" 
+       id="loginModal" 
+       tabindex="-1" 
+       aria-labelledby="loginModalLabel" 
+       aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">About Us</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" 
+                  class="btn-close" 
+                  data-bs-dismiss="modal" 
+                  aria-label="Close">
+          </button>
         </div>
         <div class="modal-body">
-          <!-- Modal content here -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="custom-form__button custom-form__button--outline" data-bs-dismiss="modal">Close</button>
+          <form class="custom-form">
+            <div class="custom-form__group">
+              <label for="email">Email</label>
+              <input type="email" 
+                     id="email" 
+                     class="custom-form__input" 
+                     required>
+            </div>
+            <div class="custom-form__group">
+              <label for="password">Password</label>
+              <input type="password" 
+                     id="password" 
+                     class="custom-form__input" 
+                     required>
+            </div>
+            <button type="submit" class="custom-form__button">
+              Login
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>
