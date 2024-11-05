@@ -64,28 +64,91 @@ a {
   }
 }
 
-// Navigation
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-gray);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem var(--spacing-base);
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
   .navbar-brand,
   .nav-link {
     color: var(--color-secondary);
-    font-size: 0.875rem;
-    transition: opacity var(--transition);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition);
+    padding: 0.5rem 0;
+    position: relative;
+
+    // Underline effect
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width var(--transition);
+    }
 
     &:hover {
-      opacity: 0.8;
+      color: var(--color-accent);
+      
+      &::after {
+        width: 100%;
+      }
+    }
+
+    // Active state
+    &.active {
+      color: var(--color-accent);
+      font-weight: 500;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    // Focus state
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-gray);
+      border-radius: 4px;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  // Visual feedback for click
+  .nav-link {
+    &:active {
+      transform: translateY(1px);
     }
   }
 }
 
 // Sections
-.hero,
 .about {
   padding: clamp(3rem, 8vw, 5rem) 0;
   text-align: center;
@@ -94,6 +157,60 @@ a {
   &__content {
     max-width: 600px;
     margin: 0 auto;
+  }
+}
+
+// Header/Hero section styles
+.hero {
+  position: relative;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  text-align: center;
+  min-height: 400px; // Adjust this value as needed
+  background-image: url('/assets/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Optional: Add overlay for better text readability
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); // Adjust opacity as needed
+    z-index: 1;
+  }
+
+  // Ensure content stays above the overlay
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+    color: white; // Ensure text is visible against the background
+  }
+
+  // Style adjustments for the search form
+  .custom-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    
+    &__input {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      
+      &:focus {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+      }
+    }
   }
 }
 
@@ -170,6 +287,7 @@ a {
   background-color: var(--color-gray);
   padding: calc(var(--spacing-base) * 2.5) 0;
   font-size: 0.875rem;
+  
 
   &__links {
     list-style: none;
@@ -201,5 +319,36 @@ a {
   a {
     color: var(--color-secondary);
     text-decoration: underline;
+  }
+}
+
+// Add responsive styles
+@media (max-width: 768px) {
+  .navbar {
+    .container {
+      flex-direction: column;
+      padding: 0.5rem var(--spacing-base);
+    }
+
+    &__links {
+      gap: 1rem;
+      margin: 1rem 0;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__auth {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      padding: 0.75rem;
+
+      &::after {
+        bottom: 4px;
+      }
+    }
   }
 }
