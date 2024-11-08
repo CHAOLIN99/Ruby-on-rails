@@ -1,7 +1,11 @@
 <%= bootstrap_form_with model: @book do |f| %>
-  <%= f.text_field :title, label: "Title" %>
-    <%= f.text_field :author, label: "Author" %>
-      <%= f.text_area :description, label: "Description" %>
-        <%= f.text_field :price, label: "Price" %>
-          <%= f.primary @book.persisted? ? 'Update Book' : 'Create Book' %>
-            <% end %>
+  <form class="row g-3">
+    <div class="col-md-6">
+      <%= f.text_field :title, label: "Title" %>
+        <%= f.text_field :author, label: "Author" %>
+          <%= f.text_area :description, label: "Description" %>
+            <%= f.text_field :price, label: "Price" %>
+              <%= f.primary @book.persisted? ? 'Update Book' : 'Create Book' %>
+    </div>
+  </form>
+  <% end %>

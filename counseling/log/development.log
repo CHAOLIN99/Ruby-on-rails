@@ -14449,3 +14449,1321 @@ Processing by SitesController#about as HTML
 Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
 
 
+Started GET "/" for ::1 at 2024-11-07 21:16:21 -1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | GC: 0.1ms)
+Completed 200 OK in 53ms (Views: 41.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:16:22 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/about" for ::1 at 2024-11-07 21:16:33 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | GC: 1.0ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 21:16:40 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 5.6ms)
+Completed 200 OK in 29ms (Views: 10.5ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/books/new" for ::1 at 2024-11-07 21:16:43 -1000
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 26.3ms | GC: 8.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 27.6ms | GC: 8.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 9.0ms)
+Completed 200 OK in 52ms (Views: 30.7ms | ActiveRecord: 0.5ms (0 queries, 0 cached) | GC: 22.6ms)
+
+
+Started POST "/books" for ::1 at 2024-11-07 21:18:08 -1000
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Brain Energy: A Revolutionary Breakthrough in Understanding Mental Health--and Improving Treatment for Anxiety, Depression, OCD, PTSD, and More", "author"=>"Christopher M. Palmer MD ", "description"=>"“[A] revolutionary road map for people suffering from depression, anxiety, bipolar disease . . . almost any brain disorder.\"\n—Mark Hyman, MD, New York Times bestselling author of Young Forever\n\nDiscover the surprising link between your metabolism and mental health in this cutting-edge guide with practical advice for treatment and care.\n\nDrawing on decades of research, Harvard psychiatrist Dr. Chris Palmer outlines a revolutionary new understanding that for the first time unites our existing knowledge about mental illness within a single framework: Mental disorders are metabolic disorders of the brain. \n\nBrain Energy explains this new understanding of mental illness in detail, from symptoms and risk factors to what is happening in brain cells. Palmer also sheds light on the new treatment pathways this theory opens up—which apply to all mental disorders, including anxiety, depression, ADHD, alcoholism, eating disorders, bipolar disorder, autism, and even schizophrenia.\n\nThis groundbreaking guide pairs cutting-edge science with practical advice and strategies to help people reclaim their mental health. Inside, Palmer reveals:\nWhy classifying mental disorders as “separate” conditions is misleading\nThe clear connections between mental illness and disorders linked to metabolism, including diabetes, heart attacks, strokes, pain disorders, obesity, Alzheimer’s disease, and epilepsy\nThe link between metabolism and every factor known to play a role in mental health, including genetics, inflammation, hormones, neurotransmitters, sleep, stress, and trauma\nThe evidence that current mental health treatments, including both medications and therapies, likely work by affecting metabolism\nNew treatments available today that readers can use to promote long-term healing\n\nPalmer puts together the pieces of the mental illness puzzle to provide answers and offer hope. Brain Energy will transform the field of mental health, and the lives of countless people around the world.", "price"=>"18.79"}, "commit"=>"Create Book"}
+[31mUnpermitted parameter: :description. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x0000000150f9c580>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Brain Energy: A Revolutionary Breakthrough in Understanding Mental Health--and Improving Treatment for Anxiety, Depression, OCD, PTSD, and More", "author"=>"Christopher M. Palmer MD ", "description"=>"“[A] revolutionary road map for people suffering from depression, anxiety, bipolar disease . . . almost any brain disorder.\"\n—Mark Hyman, MD, New York Times bestselling author of Young Forever\n\nDiscover the surprising link between your metabolism and mental health in this cutting-edge guide with practical advice for treatment and care.\n\nDrawing on decades of research, Harvard psychiatrist Dr. Chris Palmer outlines a revolutionary new understanding that for the first time unites our existing knowledge about mental illness within a single framework: Mental disorders are metabolic disorders of the brain. \n\nBrain Energy explains this new understanding of mental illness in detail, from symptoms and risk factors to what is happening in brain cells. Palmer also sheds light on the new treatment pathways this theory opens up—which apply to all mental disorders, including anxiety, depression, ADHD, alcoholism, eating disorders, bipolar disorder, autism, and even schizophrenia.\n\nThis groundbreaking guide pairs cutting-edge science with practical advice and strategies to help people reclaim their mental health. Inside, Palmer reveals:\nWhy classifying mental disorders as “separate” conditions is misleading\nThe clear connections between mental illness and disorders linked to metabolism, including diabetes, heart attacks, strokes, pain disorders, obesity, Alzheimer’s disease, and epilepsy\nThe link between metabolism and every factor known to play a role in mental health, including genetics, inflammation, hormones, neurotransmitters, sleep, stress, and trauma\nThe evidence that current mental health treatments, including both medications and therapies, likely work by affecting metabolism\nNew treatments available today that readers can use to promote long-term healing\n\nPalmer puts together the pieces of the mental illness puzzle to provide answers and offer hope. Brain Energy will transform the field of mental health, and the lives of countless people around the world.", "price"=>"18.79"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mBook Create (1.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "published_date", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Brain Energy: A Revolutionary Breakthrough in Understanding Mental Health--and Improving Treatment for Anxiety, Depression, OCD, PTSD, and More"], ["author", "Christopher M. Palmer MD "], ["description", nil], ["published_date", nil], ["price", 18.79], ["created_at", "2024-11-08 07:18:08.778994"], ["updated_at", "2024-11-08 07:18:08.778994"]]
+  ↳ app/controllers/books_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:24:in `create'
+Redirected to http://localhost:5000/books
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 21:18:08 -1000
+Processing by BooksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/books/1" for ::1 at 2024-11-07 21:18:12 -1000
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:47:in `load_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.4ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 21:18:15 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 21:18:20 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 21:18:22 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | GC: 7.4ms)
+Completed 200 OK in 23ms (Views: 14.5ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 7.4ms)
+
+
+Started POST "/counselors" for ::1 at 2024-11-07 21:21:00 -1000
+Processing by CounselorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "counselor"=>{"first_name"=>"Sophia", "last_name"=>"Carey", "specialization"=>"I specialize in Anxiety, Depression and Trauma and PTSD ", "email"=>"[FILTERED]", "phone"=>"(513) - 434 - 6892"}, "commit"=>"Create Counselor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+  [1m[36mCounselor Create (1.2ms)[0m  [1m[32mINSERT INTO "counselors" ("first_name", "last_name", "specialization", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Sophia"], ["last_name", "Carey"], ["specialization", "I specialize in Anxiety, Depression and Trauma and PTSD "], ["email", "[FILTERED]"], ["phone", "(513) - 434 - 6892"], ["created_at", "2024-11-08 07:21:00.711413"], ["updated_at", "2024-11-08 07:21:00.711413"]]
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/counselors_controller.rb:24:in `create'
+Redirected to http://localhost:5000/counselors
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 21:21:00 -1000
+Processing by CounselorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/counselors/1" for ::1 at 2024-11-07 21:21:01 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 21:21:14 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 21:21:17 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 21:21:19 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2024-11-07 21:21:36 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 21:21:37 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 6.9ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 6.9ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 21:21:38 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 1.5ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 21:21:39 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 21:26:10 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 3.9ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:26:10 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:44:26 -1000
+  
+NameError (undefined local variable or method `users' for an instance of ActionDispatch::Routing::Mapper):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/favicon.ico" for ::1 at 2024-11-07 21:44:26 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:45:30 -1000
+  
+NameError (undefined local variable or method `users' for an instance of ActionDispatch::Routing::Mapper):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2024-11-07 21:45:31 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:45:34 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:46:31 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 2.2ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:46:31 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:52:57 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:52:57 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users" for ::1 at 2024-11-07 21:53:04 -1000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (7.2.1.1) lib/abstract_controller/base.rb:158:in `process'
+actionview (7.2.1.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.1.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.1.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.1.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.1.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.1.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.1.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.1.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.1.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.1.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.1.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/sign%20up" for ::1 at 2024-11-07 21:53:17 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/sign%20up"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:53:25 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:53:25 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-07 21:55:56 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:55:56 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 21:59:50 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 1.8ms)
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 21:59:50 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:00:31 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 1.8ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:00:51 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:00:54 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:00:57 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 1.2ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:01:12 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:02:18 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | GC: 5.2ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 5.5ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:02:18 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:02:20 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:02:22 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:02:24 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:02:24 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:02:29 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.6ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:03:29 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 22:03:31 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/books/new" for ::1 at 2024-11-07 22:03:32 -1000
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2024-11-07 22:03:36 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 22:03:38 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 2.7ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 22:03:39 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 6.8ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | GC: 3.5ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 22:03:39 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 4.6ms | GC: 2.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 5.3ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 2.2ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 22:03:44 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 22:05:41 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.6ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 22:09:04 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:09:04 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:09:13 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:09:13 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:09:16 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:09:18 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:13:36 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 4.0ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:13:36 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/signup" for ::1 at 2024-11-07 22:16:35 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 2.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% title "Sign up" %>
+
+    <%= bootstrap_form_for @user do |f| %>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <%= f.alert_message "Please fix the errors below." , error_summary: false , class="form-label" %>
+                    <%= f.text_field :first_name, placeholder: "First name" , class="form-label" %>
+                        <%= f.text_field :last_name, placeholder: "Last name" , class="form-label" %>
+                            <%= f.email_field :email, placeholder: "Email" , class="form-label" %>
+                                <%= f.password_field :password, placeholder: "Password" , class="form-label" %>
+                                    <%= f.password_field :password_confirmation, placeholder: "Password confirmation" ,
+                                        class="form-label" %>
+                                        <%= f.submit "Sign up" , class: "btn btn-primary" %>
+            </div>
+        </form>
+        <% end %>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:6: syntax error, unexpected '='
+..., error_summary: false , class="form-label" ); @output_buffe...
+...                              ^
+/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:7: syntax error, unexpected '='
+...ceholder: "First name" , class="form-label" ); @output_buffe...
+...                              ^
+/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:8: syntax error, unexpected '='
+...aceholder: "Last name" , class="form-label" ); @output_buffe...
+...                              ^
+/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:9: syntax error, unexpected '='
+..., placeholder: "Email" , class="form-label" ); @output_buffe...
+...                              ^
+/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:10: syntax error, unexpected '='
+...laceholder: "Password" , class="form-label" ); @output_buffe...
+...                              ^
+/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/users/new.html.erb:12: syntax error, unexpected '='
+...                         class="form-label" ); @output_buffe...
+...                              ^
+)
+1:    <% title "Sign up" %>
+2:    
+3:        <%= bootstrap_form_for @user do |f| %>
+4:            <form class="row g-3">
+5:                <div class="col-md-6">
+6:                    <%= f.alert_message "Please fix the errors below." , error_summary: false , class="form-label" %>
+7:                        <%= f.text_field :first_name, placeholder: "First name" , class="form-label" %>
+8:                            <%= f.text_field :last_name, placeholder: "Last name" , class="form-label" %>
+9:                                <%= f.email_field :email, placeholder: "Email" , class="form-label" %>
+10:                                    <%= f.password_field :password, placeholder: "Password" , class="form-label" %>
+11:                                        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" ,
+12:                                            class="form-label" %>
+13:                                            <%= f.submit "Sign up" , class: "btn btn-primary" %>
+14:                </div>
+15:            </form>
+16:            <% end %>
+  
+app/views/users/new.html.erb:6: syntax error, unexpected '='
+app/views/users/new.html.erb:7: syntax error, unexpected '='
+app/views/users/new.html.erb:8: syntax error, unexpected '='
+app/views/users/new.html.erb:9: syntax error, unexpected '='
+app/views/users/new.html.erb:10: syntax error, unexpected '='
+app/views/users/new.html.erb:12: syntax error, unexpected '='
+Started GET "/" for ::1 at 2024-11-07 22:16:36 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:17:32 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.6ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:17:32 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/about" for ::1 at 2024-11-07 22:18:28 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 22:18:31 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 9.2ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | GC: 2.0ms)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/books/new" for ::1 at 2024-11-07 22:18:32 -1000
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 22:18:34 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 12.1ms | GC: 4.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 4.9ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 22:18:35 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 2.0ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 22:18:37 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 3.5ms | GC: 0.4ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:18:48 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:18:49 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-07 22:20:51 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 1.8ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/signup" for ::1 at 2024-11-07 22:20:52 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:20:52 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/about" for ::1 at 2024-11-07 22:20:54 -1000
+Processing by SitesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/about.html.erb within layouts/application
+  Rendered sites/about.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.5ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/books" for ::1 at 2024-11-07 22:20:55 -1000
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:2
+  Rendered books/_book.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/books/new" for ::1 at 2024-11-07 22:20:57 -1000
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-11-07 22:20:59 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 22:21:00 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 1.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-11-07 22:27:48 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 2.7ms)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:27:48 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/new" for ::1 at 2024-11-07 22:27:49 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2024-11-07 22:27:51 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.7ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 22:27:53 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2024-11-07 22:27:55 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 1.6ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/users/new" for ::1 at 2024-11-07 22:28:31 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Counsel - Professional Mental Health Support Platform">
+  <meta name="theme-color" content="#0071e3">
+
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <%= yield :head %>
+
+        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+        <link rel="icon" href="/icon.png" type="image/png">
+        <link rel="apple-touch-icon" href="/icon.png">
+        <link rel="manifest" href="/manifest.json">
+
+        <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+          <%= javascript_importmap_tags %>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <svg width="40" height="32" aria-hidden="true">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        Mindfulness
+      </a>
+
+      <ul class="navbar__links">
+        <%= nav_link 'Home' , root_path %>
+          <%= nav_link 'About' , about_path %>
+            <%= nav_link 'Books' , books_path %>
+              <%= nav_link 'Counselors' , counselors_path %>
+      </ul>
+
+      <div class="navbar__auth">
+        <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Login
+        </button>
+        <%= link_to 'Sign up' , new_user_path, class: 'custom-form__button custom-form__button--outline' %>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero/Header -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <form role="search" class="custom-form">
+          <div class="custom-form__group">
+            <input type="search" class="custom-form__input" placeholder="Search..." aria-label="Search" required>
+            <button type="submit" class="custom-form__button">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <% if @show_title %>
+        <h1>
+          <%= yield(:title) %>
+        </h1>
+        <% end %>
+
+          <%= yield %>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <div class="row">
+          <div class="col-md-3">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <%= link_to 'Home' , root_path %>
+              </li>
+              <li>
+                <%= link_to 'About' , about_path %>
+              </li>
+              <li>
+                <%= link_to 'Books' , books_path %>
+              </li>
+              <li>
+                <%= link_to 'Counselors' , counselors_path %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>&copy; <%= Time.current.year %> Counsel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="custom-form">
+            <div class="custom-form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="custom-form__input" required>
+            </div>
+            <div class="custom-form__group">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="custom-form__input" required>
+            </div>
+            <button type="submit" class="custom-form__button">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/weicheng/Desktop/final-project-CHAOLIN99/counseling/app/views/layouts/application.html.erb:22: syntax error, unexpected ':', expecting ')'
+...ication" , "data-turbo-track" : "reload" ); @output_buffer.s...
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html lang="en">
+3:    
+4:    <head>
+5:      <meta charset="UTF-8">
+6:      <title>Counsel<%= " | #{yield(:title)}" unless yield(:title).blank? %>
+7:      </title>
+8:    
+9:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+10:      <meta name="description" content="Counsel - Professional Mental Health Support Platform">
+11:      <meta name="theme-color" content="#0071e3">
+12:    
+13:      <%= csrf_meta_tags %>
+14:        <%= csp_meta_tag %>
+15:          <%= yield :head %>
+16:    
+17:            <link rel="icon" href="/icon.svg" type="image/svg+xml">
+18:            <link rel="icon" href="/icon.png" type="image/png">
+19:            <link rel="apple-touch-icon" href="/icon.png">
+20:            <link rel="manifest" href="/manifest.json">
+21:    
+22:            <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+23:              <%= javascript_importmap_tags %>
+24:    </head>
+25:    
+26:    <body>
+27:      <!-- Navigation -->
+28:      <nav class="navbar">
+29:        <div class="container">
+30:          <a href="/" class="navbar-brand">
+31:            <svg width="40" height="32" aria-hidden="true">
+32:              <use xlink:href="#bootstrap" />
+33:            </svg>
+34:            Mindfulness
+35:          </a>
+36:    
+37:          <ul class="navbar__links">
+38:            <%= nav_link 'Home' , root_path %>
+39:              <%= nav_link 'About' , about_path %>
+40:                <%= nav_link 'Books' , books_path %>
+41:                  <%= nav_link 'Counselors' , counselors_path %>
+42:          </ul>
+43:    
+44:          <div class="navbar__auth">
+45:            <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#loginModal">
+46:              Login
+47:            </button>
+48:            <%= link_to 'Sign up' , new_user_path, class: 'custom-form__button custom-form__button--outline' %>
+49:          </div>
+50:        </div>
+51:      </nav>
+52:    
+53:      <!-- Hero/Header -->
+54:      <header class="hero">
+55:        <div class="container">
+56:          <div class="hero__content">
+57:            <form role="search" class="custom-form">
+58:              <div class="custom-form__group">
+59:                <input type="search" class="custom-form__input" placeholder="Search..." aria-label="Search" required>
+60:                <button type="submit" class="custom-form__button">
+61:                  Search
+62:                </button>
+63:              </div>
+64:            </form>
+65:          </div>
+66:        </div>
+67:      </header>
+68:    
+69:      <!-- Main Content -->
+70:      <main>
+71:        <div class="container">
+72:          <% if @show_title %>
+73:            <h1>
+74:              <%= yield(:title) %>
+75:            </h1>
+76:            <% end %>
+77:    
+78:              <%= yield %>
+79:        </div>
+80:      </main>
+81:    
+82:      <!-- Footer -->
+83:      <footer class="footer">
+84:        <div class="container">
+85:          <div class="footer__links">
+86:            <div class="row">
+87:              <div class="col-md-3">
+88:                <h4>Quick Links</h4>
+89:                <ul>
+90:                  <li>
+91:                    <%= link_to 'Home' , root_path %>
+92:                  </li>
+93:                  <li>
+94:                    <%= link_to 'About' , about_path %>
+95:                  </li>
+96:                  <li>
+97:                    <%= link_to 'Books' , books_path %>
+98:                  </li>
+99:                  <li>
+100:                    <%= link_to 'Counselors' , counselors_path %>
+101:                  </li>
+102:                </ul>
+103:              </div>
+104:              <div class="col-md-3">
+105:                <h4>Support</h4>
+106:                <ul>
+107:                  <li><a href="#">Contact Us</a></li>
+108:                  <li><a href="#">FAQs</a></li>
+109:                  <li><a href="#">Privacy Policy</a></li>
+110:                  <li><a href="#">Terms of Service</a></li>
+111:                </ul>
+112:              </div>
+113:            </div>
+114:          </div>
+115:          <div class="footer__legal">
+116:            <p>&copy; <%= Time.current.year %> Counsel. All rights reserved.</p>
+117:          </div>
+118:        </div>
+119:      </footer>
+120:    
+121:      <!-- Modal -->
+122:      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+123:        <div class="modal-dialog">
+124:          <div class="modal-content">
+125:            <div class="modal-header">
+126:              <h5 class="modal-title" id="loginModalLabel">Login</h5>
+127:              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+128:              </button>
+129:            </div>
+130:            <div class="modal-body">
+131:              <form class="custom-form">
+132:                <div class="custom-form__group">
+133:                  <label for="email">Email</label>
+134:                  <input type="email" id="email" class="custom-form__input" required>
+135:                </div>
+136:                <div class="custom-form__group">
+137:                  <label for="password">Password</label>
+138:                  <input type="password" id="password" class="custom-form__input" required>
+139:                </div>
+140:                <button type="submit" class="custom-form__button">
+141:                  Login
+142:                </button>
+143:              </form>
+144:            </div>
+145:          </div>
+146:        </div>
+147:      </div>
+148:    </body>
+149:    
+150:    </html>
+  
+app/views/layouts/application.html.erb:22: syntax error, unexpected ':', expecting ')'
+Started GET "/users/new" for ::1 at 2024-11-07 22:29:02 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 2.4ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-07 22:29:02 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-07 22:29:04 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2024-11-07 22:29:05 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2024-11-07 22:29:36 -1000
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"William ", "last_name"=>"Anderson", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000150b58a28>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"William ", "last_name"=>"Anderson", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "William "], ["last_name", "Anderson"], ["email", "[FILTERED]"], ["password_digest", "[FILTERED]"], ["created_at", "2024-11-08 08:29:36.573858"], ["updated_at", "2024-11-08 08:29:36.573858"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:5000/
+Completed 302 Found in 247ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2024-11-07 22:29:36 -1000
+Processing by SitesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2024-11-07 22:29:45 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

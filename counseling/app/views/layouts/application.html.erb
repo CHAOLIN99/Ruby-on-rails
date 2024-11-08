@@ -43,9 +43,7 @@
         <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#loginModal">
           Login
         </button>
-        <button type="button" class="custom-form__button custom-form__button--outline">
-          Sign up
-        </button>
+        <%= link_to 'Sign up', new_user_path, class: 'custom-form__button custom-form__button--outline' %>
       </div>
     </div>
   </nav>
