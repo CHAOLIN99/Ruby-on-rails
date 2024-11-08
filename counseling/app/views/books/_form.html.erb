@@ -1,5 +1,5 @@
-<%= bootstrap_form_with model: @book do |f| %>
-  <form class="row g-3">
+<%= bootstrap_form_with model: @book, class: "row g-3" do |f| %>
+  
     <div class="col-md-6">
       <%= f.text_field :title, label: "Title" %>
         <%= f.text_field :author, label: "Author" %>
@@ -7,5 +7,5 @@
             <%= f.text_field :price, label: "Price" %>
               <%= f.primary @book.persisted? ? 'Update Book' : 'Create Book' %>
     </div>
-  </form>
+  
   <% end %>

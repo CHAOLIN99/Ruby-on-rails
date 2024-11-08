@@ -1,8 +1,7 @@
 <% title "Sign up" %>
 
-    <%= bootstrap_form_for @user do |f| %>
-        <form class="row g-3">
-            <div class="col-md-6">
+    <%= bootstrap_form_for @user, class: "row g-3" do |f| %>
+        <div class="col-md-6">
                 <%= f.alert_message "Please fix the errors below." , error_summary: false , class: "form-label" %>
                     <%= f.text_field :first_name, placeholder: "First name" , class: "form-label" %>
                         <%= f.text_field :last_name, placeholder: "Last name" , class: "form-label" %>
@@ -12,5 +11,4 @@
                                         class: "form-label" %>
                                         <%= f.submit "Sign up" , class: "btn btn-primary" %>
             </div>
-        </form>
-        <% end %>
+    <% end %>

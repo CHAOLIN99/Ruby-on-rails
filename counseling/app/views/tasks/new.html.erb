@@ -1,0 +1,9 @@
+<% title "Login" %>
+
+<%= bootstrap_form_with url: login_path, method: :post, class: "row g-3" do |f| %>
+  <div class="col-md-6">
+    <%= f.email_field :email, label: "Email", class: "form-control" %>
+    <%= f.password_field :password, label: "Password", class: "form-control" %>
+    <%= f.primary "Login", class: "btn btn-primary mt-3" %>
+  </div>
+<% end %>

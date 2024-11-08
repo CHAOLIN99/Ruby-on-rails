@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get "signup" => "users#new"
+  get "login" => "tasks#new"
   resources :users
+  resources :tasks, except: [:index, :edit, :update, :destroy, :show, :new]
   resources :counselors do
     resources :sessions
   end

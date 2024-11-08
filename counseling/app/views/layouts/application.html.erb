@@ -39,11 +39,13 @@
         <%= nav_link 'Counselors', counselors_path %>
       </ul>
 
-      <div class="navbar__auth">
-        <button type="button" class="custom-form__button" data-bs-toggle="modal" data-bs-target="#loginModal">
-          Login
-        </button>
-        <%= link_to 'Sign up', new_user_path, class: 'custom-form__button custom-form__button--outline' %>
+      <div class="d-grid gap-2 d-md-block">
+        <% if task[:user_id] %>
+          <%= link_to 'Logout', logout_path, class: 'custom-form__button custom-form__button--outline' %>
+        <% else %>
+        <%= link_to 'Log in', login_path, class: 'custom-form__button custom-form__button--outline' %>
+        <%= link_to 'Sign up', signup_path, class: 'custom-form__button custom-form__button--outline' %>
+        <% end %>
       </div>
     </div>
   </nav>
