@@ -38,6 +38,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_password
+    @user = current_user
+  
+    if @user.authenticate(params[:user][:current_password]) && @user.update(user_params.except(:current_password))
+      # Manually reset the session
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: "Password updated successfully"
+    else
+      flash.now[:alert] = "Current password is incorrect or new password is invalid"
+      render :edit
+    end
+  end
+  
+  
+
   def destroy
     logout if current_user == @user
     @user.destroy
@@ -54,4 +69,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
+
+  
 end

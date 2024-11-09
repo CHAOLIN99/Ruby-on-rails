@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   post "login" => "tasks#create"
   get "logout" => "tasks#destroy"
   resources :users
+  resource :user, only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
+  end
   resources :tasks, except: [:index, :edit, :update, :show, :destroy, :new]
   resources :counselors do
     resources :sessions

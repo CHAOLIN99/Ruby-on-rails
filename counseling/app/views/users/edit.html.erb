@@ -1,2 +1,37 @@
-<% title"Edit Info" %>
-<%= render "form" %>
+<% title "Edit Info" %>
+
+<%= bootstrap_form_for(@user, url: { action: "update_password" }, html: { class: "row g-3" }) do |f| %>
+  <div class="col-md-6">
+    <%= f.alert_message "Please fix the errors below.", error_summary: false %>
+    
+    <%= f.text_field :first_name, 
+                     placeholder: "First name", 
+                     label_class: "form-label" %>
+    
+    <%= f.text_field :last_name, 
+                     placeholder: "Last name", 
+                     label_class: "form-label" %>
+    
+    <%= f.email_field :email, 
+                      placeholder: "Email", 
+                      label_class: "form-label" %>
+    
+    <%= f.password_field :new_password, 
+                        placeholder: "New Password", 
+                        label_class: "form-label" %>
+    
+    <%= f.password_field :password_confirmation, 
+                        placeholder: "Password confirmation", 
+                        label_class: "form-label" %>
+    
+    <div class="mb-3">
+      <%= f.label :current_password, class: "form-label" %>
+      <small class="text-muted">
+        (we need your current password to confirm your changes)
+      </small>
+      <%= f.password_field :current_password %>
+    </div>
+
+    <%= f.primary "Update Info", class: "btn btn-primary" %>
+  </div>
+<% end %>
