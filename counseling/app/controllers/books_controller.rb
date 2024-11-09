@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
+  before_action :authenticate
   before_action :load_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    @books = current_user.books.all
   end
 
   def new
@@ -20,7 +21,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-
+    @book.user = current_user
     if @book.save
       redirect_to books_path, notice: "Book was successfully created."
     else
@@ -44,7 +45,7 @@ class BooksController < ApplicationController
   private 
 
   def load_book
-    @book = Book.find(params[:id])
+    @book = current_user.books.find(params[:id])
   end
 
   def book_params

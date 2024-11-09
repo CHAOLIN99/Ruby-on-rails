@@ -1,22 +1,15 @@
 Rails.application.routes.draw do
   get "signup" => "users#new"
   get "login" => "tasks#new"
+  post "login" => "tasks#create"
+  get "logout" => "tasks#destroy"
   resources :users
-  resources :tasks, except: [:index, :edit, :update, :destroy, :show, :new]
+  resources :tasks, except: [:index, :edit, :update, :show, :destroy, :new]
   resources :counselors do
     resources :sessions
   end
   resources :books
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  #get "up" => "rails/health#show", as: :rails_health_check
-
-  # Render dynamic PWA files from app/views/pwa/*
-  #get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  #get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "about" => "sites#about"
-  # Defines the root path route ("/")
   root "sites#index"
 end

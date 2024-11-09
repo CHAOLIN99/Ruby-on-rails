@@ -35,16 +35,19 @@
       <ul class="navbar__links">
         <%= nav_link 'Home', root_path %>
         <%= nav_link 'About', about_path %>
-        <%= nav_link 'Books', books_path %>
+        <% if current_user %>
+          <%= nav_link 'Books', books_path %>
+        <% end %>
         <%= nav_link 'Counselors', counselors_path %>
       </ul>
 
       <div class="d-grid gap-2 d-md-block">
-        <% if task[:user_id] %>
-          <%= link_to 'Logout', logout_path, class: 'custom-form__button custom-form__button--outline' %>
+        <% if current_user %>
+          <%= link_to current_user.email, user_path(current_user), class: 'custom-form__button custom-form__button--outline' %>
+          <%= link_to 'Logout', logout_path , class: 'custom-form__button custom-form__button--outline' %>
         <% else %>
-        <%= link_to 'Log in', login_path, class: 'custom-form__button custom-form__button--outline' %>
-        <%= link_to 'Sign up', signup_path, class: 'custom-form__button custom-form__button--outline' %>
+          <%= link_to 'Log in', login_path, class: 'custom-form__button custom-form__button--outline' %>
+          <%= link_to 'Sign up', signup_path, class: 'custom-form__button custom-form__button--outline' %>
         <% end %>
       </div>
     </div>
