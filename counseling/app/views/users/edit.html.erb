@@ -15,22 +15,21 @@
     <%= f.email_field :email, 
                       placeholder: "Email", 
                       label_class: "form-label" %>
-    
-    <%= f.password_field :new_password, 
+    <% if @user.has_password? %>
+      <%= f.password_field :new_password, 
                         placeholder: "New Password", 
                         label_class: "form-label" %>
-    
-    <%= f.password_field :password_confirmation, 
+      <%= f.password_field :password_confirmation, 
                         placeholder: "Password confirmation", 
                         label_class: "form-label" %>
-    
-    <div class="mb-3">
+      <div class="mb-3">
       <%= f.label :current_password, class: "form-label" %>
       <small class="text-muted">
         (we need your current password to confirm your changes)
       </small>
       <%= f.password_field :current_password %>
-    </div>
+      </div>
+    <% end %>
 
     <%= f.primary "Update Info", class: "btn btn-primary" %>
   </div>

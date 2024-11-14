@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to root_path, notice: "Information updated successfully"
     else
       render edit, status: :unprocessable_entity
     end
@@ -54,14 +54,22 @@ class UsersController < ApplicationController
 
   def update_password
     @user = current_user
-  
-    if @user.authenticate(params[:user][:current_password]) && @user.update(user_params.except(:current_password))
-      # Manually reset the session
-      session[:user_id] = @user.id
-      redirect_to root_path, notice: "Password updated successfully"
+    if @user.has_password? 
+      if @user.authenticate(params[:user][:current_password]) && @user.update(user_params.except(:current_password))
+        # Manually reset the session
+        session[:user_id] = @user.id
+        redirect_to root_path, notice: "Password updated successfully"
+      else
+        flash.now[:alert] = "Current password is incorrect or new password is invalid"
+        render :edit
+      end
     else
-      flash.now[:alert] = "Current password is incorrect or new password is invalid"
-      render :edit
+      if @user.update(user_params.except(:current_password, :password, :password_confirmation))
+        redirect_to root_path, notice: "Information updated successfully"
+      else
+        flash.now[:alert] = "Failed to update information"
+        render :edit
+      end
     end
   end
   

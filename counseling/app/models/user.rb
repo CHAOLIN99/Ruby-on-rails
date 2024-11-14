@@ -5,10 +5,12 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, format: { with: /@/, message: "must contain @" }, uniqueness: true
+  #validates :password, presence: true, if: :has_password?
 
   def self.new_from_hash(user_hash)
     user = User.new user_hash
     user.password_digest = 0
+    #user.save(validate: false)
     user
   end
 
