@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "login" => "tasks#new"
   post "login" => "tasks#create"
   get "logout" => "tasks#destroy"
+  get "auth/:provider/callback" => "authentications#create"
   resources :users
   resource :user, only: [:edit] do
     collection do

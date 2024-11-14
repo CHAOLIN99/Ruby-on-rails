@@ -8,13 +8,27 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if session[:user_hash]
+      @user = User.new_from_hash(session[:user_hash])
+      @user.valid?
+    else 
+      @user = User.new
+    end
   end
 
   def create
+    if session[:user_hash]
+      @user = User.new_from_hash(session[:user_hash])
+      @user.first_name = user_params[:first_name]
+      @user.last_name = user_params[:last_name]
+      @user.email = user_params[:email]
+    else
+      @user = User.new user_params
+    end
     @user = User.new(user_params)
     if @user.save
       login(@user)
+      session[:user_hash] = nil
       redirect_to root_path, notice: "You signed up sucessfuly!"
     else
       render "new", status: :unprocessable_entity
