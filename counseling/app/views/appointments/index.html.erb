@@ -1,0 +1,5 @@
+<% title "Appointments" %>
+<% @appointments.each do |appointment| %>
+    <%= render appointment %>
+<% end %>
+<%= link_to "New Appointment" , new_appointment_path, class: "btn btn-primary" %>

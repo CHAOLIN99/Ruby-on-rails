@@ -1,0 +1,7 @@
+<% title "Appointment" %>
+
+<%= render @appointment %>
+<div class="container">
+    <%= link_to "Edit" , edit_appointment_path(@appointment) %> | <%= link_to "All Appointment" , appointments_path %>
+    <%= button_to "Delete", @appointment, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>

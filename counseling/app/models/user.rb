@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :books
+  has_many :appointments
   has_secure_password
   
   validates :first_name, presence: true

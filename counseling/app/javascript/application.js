@@ -2,3 +2,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+
+
+document.addEventListener('turbo:load', function() {
+    flatpickr(".start_date", {
+      enableTime: false,
+      dateFormat: "Y-m-d",
+    });
+  });
+  

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get "signup" => "users#new"
   get "login" => "tasks#new"
   get "auth/:provider/callback" => "authentications#create"
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
     resources :sessions
   end
   resources :books
+  resources :appointments
+
 
   get "about" => "sites#about"
   root "sites#index"
