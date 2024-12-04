@@ -1,10 +1,8 @@
-<%= bootstrap_form_with(model: [@counselor, @session]), class: "row g-3" do |f| %>
-    
-        <div class="col-md-6">
-            <%= f.text_field :title, label: "Title" %>
-                <%= f.date_field :session_date, label: "Date" %>
-                    <%= f.text_area :session_note, label: "Notes" %>
-                        <%= f.primary @session.persisted?? "Update Session" : "Create Session" %>
-        </div>
-    
+<%= bootstrap_form_with(model: [@counselor, @session], class: "row g-3") do |f| %>
+  <div class="col-md-6">
+    <%= f.text_field :title, label: "Title" %>
+    <%= f.date_field :session_date, label: "Date" %>
+    <%= f.text_area :session_note, label: "Notes" %>
+    <%= f.submit @session.persisted? ? "Update Session" : "Create Session", class: "btn btn-primary" %>
+  </div>
 <% end %>
