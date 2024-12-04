@@ -9,21 +9,20 @@ require 'minitest/spec'
 require 'capybara/rails'
 require 'mocha/minitest'
 
-Minitest::Reporters.use!(Minitest::Reporters::ProgressReporter.new(color: true), ENV, Minitest.backtrace_filter) 
+Minitest::Reporters.use!(Minitest::Reporters::ProgressReporter.new(color: true),ENV,Minitest.backtrace_filter)
 
-module ActiveSupport
-  class TestCase
-    # Run tests in parallel with specified workers
-    parallelize(workers: :number_of_processors)
+class ActiveSupport::TestCase
+  # Run tests in parallel with specified workers
+  parallelize(workers: :number_of_processors)
 
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-    #fixtures :all
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  #fixtures :all
 
-    # Add more helper methods to be used by all tests here...
-    extend Minitest::Spec::DSL
-  end
+  # Add more helper methods to be used by all tests here...
+  extend Minitest::Spec::DSL
 end
 
-class ActionDispatch::IntegrationTest
+class ActionDispatch::IntegrationTest 
   include Capybara::DSL
+  
 end
