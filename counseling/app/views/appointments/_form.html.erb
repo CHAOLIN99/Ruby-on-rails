@@ -1,6 +1,6 @@
 <%= bootstrap_form_with model: @appointment, data: { controller: "flatpickr" }, class: "row g-3" do |f| %>
   <div class="col-md-6">
-    <%= f.date_field :date, label: "Appointment Date", class: "start_date" %>
+    <%= f.date_field :date, label: "date", class: "start_date" %>
   </div>
   <div class="col-md-12 mt-3">
     <%= f.submit @appointment.persisted? ? 'Update Appointment' : 'Create Appointment', class: "btn btn-primary" %>

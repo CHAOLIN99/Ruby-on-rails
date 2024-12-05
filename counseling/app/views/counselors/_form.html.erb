@@ -1,7 +1,7 @@
 <%= bootstrap_form_with model: @counselor, class: "row g-3" do |f| %>
     
         <div class="col-md-6">
-            <%= f.text_field :first_name, label: "First Name" %>
+            <%= f.text_field :first_name, label: "First Name", id: "first_name" %>
                 <%= f.text_field :last_name, label: "Last Name" %>
                     <%= f.text_field :specialization, label: "Specialization" %>
                         <%= f.text_field :email, label: "Email" %>

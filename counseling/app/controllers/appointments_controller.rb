@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate
   before_action :load_appointment, only: [:show, :edit, :update, :destroy]
+  
 
   def index
     @appointments = current_user.appointments.all

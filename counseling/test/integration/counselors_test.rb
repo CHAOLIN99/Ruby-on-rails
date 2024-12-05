@@ -1,6 +1,8 @@
 require "test_helper"
 
 class CounselorsTest < ActionDispatch::IntegrationTest
+  include AuthenticationMacros
+
   test "find counslors" do
     visit root_path
     
@@ -12,12 +14,39 @@ class CounselorsTest < ActionDispatch::IntegrationTest
 
     click_on "New Counselor"
 
-    fill_in "First Name", with: "John"
-    fill_in "Last Name", with: "Doe"
-    fill_in "Specialization", with: "Marriage"
-    fill_in "Email", with: "test@test.com"
-    fill_in "Phone", with: "123-456-7890"
+    counselor = setup_counselor(first_name: "John", last_name: "Doe", specialization: "Marriage", email: "test@test.com", phone: "123-456-7890")
+
+    click_button "Create Counselor"
   end
+
+  test "edit a counselor" do
+    counselor = setup_counselor(first_name: "John", last_name: "Doe", specialization: "Marriage", email: "test@test.com", phone: "123-456-7890")
+
+    visit counselors_path
+
+    click_on "John"
+
+    click_on "Edit"
+
+    fill_in "First Name", with: "Jane"
+
+    click_button "Update Counselor"
+
+    assert_equal page.current_path, counselor_path(counselor)
+  end
+
+  test "delete a counselor" do
+    counselor = setup_counselor(first_name: "John", last_name: "Doe", specialization: "Marriage", email: "test@test.com", phone: "123-456-7890")
+
+    visit counselors_path
+
+    click_on "John"
+
+    click_on "Delete"
+
+    assert_equal page.current_path, counselors_path
+  end
+  
 
   
 end

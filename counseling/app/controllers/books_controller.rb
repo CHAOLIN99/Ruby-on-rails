@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def show
     if @book.nil?
       redirect_to books_path, alert: "Book not found"
+    
     end
   end
 
