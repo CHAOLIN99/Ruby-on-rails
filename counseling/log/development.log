@@ -31382,3 +31382,16 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2024-12-04 21:19:57 -1000
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 3.1ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.5ms (2 queries, 1 cached) | GC: 3.1ms)
+
+
