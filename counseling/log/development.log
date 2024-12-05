@@ -30940,3 +30940,445 @@ Processing by SessionsController#edit as HTML
 Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.2ms (4 queries, 1 cached) | GC: 2.4ms)
 
 
+Started GET "/" for ::1 at 2024-12-04 15:36:03 -1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | GC: 7.3ms)
+Completed 200 OK in 48ms (Views: 41.8ms | ActiveRecord: 0.7ms (2 queries, 1 cached) | GC: 8.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/flatpickr/dist/flatpickr.min.css"):
+  
+Started GET "/manifest.json" for ::1 at 2024-12-04 15:36:04 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/counselors" for ::1 at 2024-12-04 15:36:19 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 9.5ms | GC: 0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | GC: 0.7ms)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.5ms (3 queries, 1 cached) | GC: 0.7ms)
+
+
+Started GET "/counselors/1" for ::1 at 2024-12-04 15:37:51 -1000
+Processing by CounselorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | GC: 5.7ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.9ms (3 queries, 1 cached) | GC: 5.7ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:37:53 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.2ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 0.5ms)
+
+
+Started GET "/counselors/1/edit" for ::1 at 2024-12-04 15:37:53 -1000
+Processing by CounselorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/edit.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 17.3ms | GC: 0.3ms)
+  Rendered counselors/edit.html.erb within layouts/application (Duration: 18.6ms | GC: 0.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | GC: 0.3ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 0.3ms)
+
+
+Started PATCH "/counselors/1" for ::1 at 2024-12-04 15:37:57 -1000
+Processing by CounselorsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "counselor"=>{"first_name"=>"Sophia", "last_name"=>"Carey", "specialization"=>"I specialize in Anxiety, Depression and Trauma and PTSD ", "email"=>"[FILTERED]", "phone"=>"(513) - 434 - 6892"}, "commit"=>"Update Counselor", "id"=>"1"}
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+Redirected to http://localhost:3000/counselors/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/1" for ::1 at 2024-12-04 15:37:57 -1000
+Processing by CounselorsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCounselor Load (0.0ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors" WHERE "counselors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/counselors_controller.rb:47:in `load_counselor'
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/show.html.erb within layouts/application
+  Rendered counselors/_counselor.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered counselors/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:37:58 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 5.3ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 5.3ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-12-04 15:37:59 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 3.7ms | GC: 1.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 4.5ms | GC: 1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 1.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 1.5ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-12-04 15:38:00 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 3.0ms | GC: 0.5ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.5ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:38:06 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.3ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 0.3ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-12-04 15:44:37 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 2.9ms | GC: 0.2ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.2ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.6ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 2.2ms (2 queries, 1 cached) | GC: 0.6ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:51:38 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (1.4ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.5ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:51:38 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors" for ::1 at 2024-12-04 15:51:41 -1000
+Processing by CounselorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/index.html.erb within layouts/application
+  [1m[36mCounselor Load (0.1ms)[0m  [1m[34mSELECT "counselors".* FROM "counselors"[0m
+  ↳ app/views/counselors/index.html.erb:2
+  Rendered counselors/_counselor.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered counselors/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-12-04 15:51:43 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 1.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 1.1ms)
+
+
+Started GET "/counselors/new" for ::1 at 2024-12-04 15:51:56 -1000
+Processing by CounselorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering counselors/new.html.erb within layouts/application
+  Rendered counselors/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered counselors/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.5ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.5ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-12-04 15:51:56 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for ::1 at 2024-12-04 15:55:01 -1000
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 3.6ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.2ms (2 queries, 1 cached) | GC: 3.6ms)
+
+
+Started GET "/login" for ::1 at 2024-12-04 16:18:15 -1000
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 2.2ms)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.6ms (2 queries, 1 cached) | GC: 2.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/flatpickr/dist/flatpickr.min.css"):
+  
+Started GET "/manifest.json" for ::1 at 2024-12-04 16:18:16 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/login" for ::1 at 2024-12-04 16:18:17 -1000
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 4.2ms | GC: 1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 3.3ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 3.3ms)
+
+
+Started POST "/auth/github" for ::1 at 2024-12-04 16:18:23 -1000
+Started GET "/auth/github/callback?code=03a80c0d40dc98e5c27a&state=5ced6c70f9766af71ca73dcdceb8cab8c787d511de2430dc" for ::1 at 2024-12-04 16:18:24 -1000
+Processing by AuthenticationsController#create as HTML
+  Parameters: {"code"=>"03a80c0d40dc98e5c27a", "state"=>"5ced6c70f9766af71ca73dcdceb8cab8c787d511de2430dc", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["uid", "114194640"], ["provider", "github"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:4:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-04 16:18:25 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.3ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/flatpickr/dist/flatpickr.min.css"):
+  
+Started GET "/manifest.json" for ::1 at 2024-12-04 16:18:25 -1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/logout" for ::1 at 2024-12-04 16:21:34 -1000
+Processing by TasksController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-04 16:21:34 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 1.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 1.4ms)
+
+
+Started GET "/signup" for ::1 at 2024-12-04 16:21:34 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2024-12-04 18:56:23 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 2.0ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.0ms (2 queries, 1 cached) | GC: 2.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-04 18:56:26 -1000
+Processing by SitesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sites/index.html.erb within layouts/application
+  Rendered sites/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2024-12-04 18:57:35 -1000
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.6ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2024-12-04 18:57:35 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.7ms | GC: 1.2ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | GC: 1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 1.2ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 1.2ms)
+
+
+Started GET "/signup" for ::1 at 2024-12-04 18:57:39 -1000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
+
+

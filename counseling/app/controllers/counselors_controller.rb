@@ -11,7 +11,7 @@ class CounselorsController < ApplicationController
 
   def show
     if @counselor.nil?
-      redirect_to counselorss_path, alert: "Counselor not found"
+      redirect_to counselors_path, alert: "Counselor not found"
     end
   end
 
